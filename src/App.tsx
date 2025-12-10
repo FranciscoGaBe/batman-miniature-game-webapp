@@ -1,9 +1,25 @@
-import { getGameData } from './getData';
+import { Provider } from 'react-redux';
+import { loadGameData } from './utils/loadGameData';
+import { store } from './store/store';
+import Characters from './components/characters/Characters';
+import { useOnMount } from './hooks/useOnMount';
+import { useState } from 'react';
 
 const App = () => {
-    getGameData();
+    const [loading, setLoading] = useState(true);
 
-    return null;
+    useOnMount(async () => {
+        await loadGameData();
+        setLoading(false);
+    });
+
+    if (loading) return <div>Loading...</div>;
+
+    return (
+        <Provider store={store}>
+            <Characters />
+        </Provider>
+    );
 };
 
 export default App;

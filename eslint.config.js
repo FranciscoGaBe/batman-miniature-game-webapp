@@ -46,6 +46,13 @@ export default defineConfig([
             '@typescript-eslint/no-explicit-any': 'error',
             'no-shadow': 'off',
             '@typescript-eslint/no-shadow': 'error',
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    prefer: 'type-imports', // enforce `import type { ... }`
+                    disallowTypeAnnotations: false, // allow regular imports when used as values
+                },
+            ],
         },
     },
 ]);
