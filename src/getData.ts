@@ -1,8 +1,10 @@
-const URL = 'https://app.knightmodels.com/crew'
+const URL = 'https://corsproxy.io/?url=https://app.knightmodels.com/gamedata';
 
 export const getGameData = async () => {
-  const response = await fetch(URL);
-  const json = await response.json()
+    const response = await fetch(URL);
+    const json = await response.json();
 
-  return json
-}
+    console.log(json);
+
+    return json;
+};

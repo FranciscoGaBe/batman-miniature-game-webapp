@@ -1,5 +1,9 @@
-const App = () => {
-  return null
-}
+import { getGameData } from './getData';
 
-export default App
+const App = () => {
+    getGameData();
+
+    return null;
+};
+
+export default App;
