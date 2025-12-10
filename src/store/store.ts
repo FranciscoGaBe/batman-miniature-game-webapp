@@ -1,10 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
-import charactersReducer from './charactersSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import affiliationsReducer from './affiliationsSlice';
+import cardsReducer from './cardsSlice';
+import charactersReducer from './charactersSlice';
+import equipmentReducer from './equipmentSlice';
+import traitsReducer from './traitsSlice';
+import upgradesReducer from './upgradesSlice';
+import weaponsReducer from './weaponsSlice';
 
 export const store = configureStore({
     reducer: {
+        affiliations: affiliationsReducer,
+        cards: cardsReducer,
         characters: charactersReducer,
+        equipment: equipmentReducer,
+        traits: traitsReducer,
+        upgrades: upgradesReducer,
+        weapons: weaponsReducer,
     },
 });
 
