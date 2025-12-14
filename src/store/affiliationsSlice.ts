@@ -26,3 +26,6 @@ const affiliationsSelectors = affiliationsAdapter.getSelectors<RootState>(
 
 export const selectAffiliation = (id: number) => (state: RootState) =>
     affiliationsSelectors.selectById(state, id);
+
+export const selectAffiliations = (ids: number[]) => (state: RootState) =>
+    ids.map((id) => selectAffiliation(id)(state));

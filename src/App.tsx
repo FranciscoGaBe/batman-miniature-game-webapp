@@ -1,9 +1,10 @@
 import { Provider } from 'react-redux';
 import { loadGameData } from './utils/loadGameData';
 import { store } from './store/store';
-import Characters from './components/characters/Characters';
 import { useOnMount } from './hooks/useOnMount';
 import { useState } from 'react';
+import Menu from './components/Menu';
+import Cards from './components/Cards';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -17,7 +18,10 @@ const App = () => {
 
     return (
         <Provider store={store}>
-            <Characters />
+            <div className="h-full flex flex-col">
+                <Menu />
+                <Cards />
+            </div>
         </Provider>
     );
 };

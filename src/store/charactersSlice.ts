@@ -4,7 +4,7 @@ import type { Character } from '../models/character';
 import type { RootState } from './store';
 
 const charactersAdapter = createEntityAdapter<Character>({
-    sortComparer: (a, b) => a.name.localeCompare(b.name),
+    sortComparer: (a, b) => a.alias.localeCompare(b.alias),
 });
 
 const charactersSlice = createSlice({
@@ -26,3 +26,6 @@ const charactersSelectors = charactersAdapter.getSelectors<RootState>(
 
 export const selectCharacter = (id: number) => (state: RootState) =>
     charactersSelectors.selectById(state, id);
+
+export const selectAllCharacters = (state: RootState) =>
+    charactersSelectors.selectAll(state);

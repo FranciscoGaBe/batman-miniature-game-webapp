@@ -45,7 +45,7 @@ const saveStoredData = (data: Data) => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 };
 
-const fetchGameData = async () => {
+export const fetchGameData = async () => {
     const response = await fetch(URL);
     const data: Data = await response.json();
     saveStoredData(data);

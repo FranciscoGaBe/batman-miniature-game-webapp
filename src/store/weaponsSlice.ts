@@ -24,5 +24,5 @@ const weaponsSelectors = weaponsAdapter.getSelectors<RootState>(
     (state) => state.weapons,
 );
 
-export const selectweapon = (id: number) => (state: RootState) =>
+export const selectWeapon = (id: number) => (state: RootState) =>
     weaponsSelectors.selectById(state, id);

@@ -7,6 +7,7 @@ import equipmentReducer from './equipmentSlice';
 import traitsReducer from './traitsSlice';
 import upgradesReducer from './upgradesSlice';
 import weaponsReducer from './weaponsSlice';
+import ranksReducer from './ranksSlice';
 
 export const store = configureStore({
     reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
         traits: traitsReducer,
         upgrades: upgradesReducer,
         weapons: weaponsReducer,
+        ranks: ranksReducer,
     },
 });
 

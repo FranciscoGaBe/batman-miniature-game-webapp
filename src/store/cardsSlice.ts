@@ -26,3 +26,6 @@ const cardsSelectors = cardsAdapter.getSelectors<RootState>(
 
 export const selectCard = (id: number) => (state: RootState) =>
     cardsSelectors.selectById(state, id);
+
+export const selectAllCards = (state: RootState) =>
+    cardsSelectors.selectAll(state);

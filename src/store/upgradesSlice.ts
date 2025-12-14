@@ -24,5 +24,5 @@ const upgradesSelectors = upgradesAdapter.getSelectors<RootState>(
     (state) => state.upgrades,
 );
 
-export const selectupgrade = (id: number) => (state: RootState) =>
+export const selectUpgrade = (id: number) => (state: RootState) =>
     upgradesSelectors.selectById(state, id);
